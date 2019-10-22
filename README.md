@@ -1,1 +1,1 @@
-# McClennys
+# McClennys Insurance Company Website
