@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    
+<meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>McClenny Insurance Agency</title>
+   <link href="mi_reset.css"  rel="stylesheet" />
+   <link href="mi_styles.css" rel="stylesheet" />
+    <link href="mi_forms.css" rel="stylesheet" />
+
+</head>
+
+<body onload="load()" onunload="GUnload()">
+<header>
+      <img src="mi_logo.png" alt="McClenny Insurance Agency" id="logoimg" />
+      <nav> <a id="navicon" href="#"><img src="mi_navicon.png" alt=""  width="30" height="30" /></a>
+         <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="mci_contact.html">Contact</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+         </ul>
+      </nav>
+   </header>
+       <section id="main">
+
+      <h1>Contact Us</h1>
+      <p>Thank you for taking the time to consider the McClenny Insurance
+         agency. If you would like to know more or have any questions, 
+         please fill out the form below and we will respond as soon as
+         possible.</p>
+      <p>Inquiries are private and confidential. The McClenny agency will
+         not share your contact information with third parties, <em>ever</em>. </p>
+      <p>Please note that all fields are required and must be valid.</p>
+
+     <form id="inquiry" action="mci_submit.php" method="post">
+		<fieldset id="custInfo">
+			<legend>Customer Information</legend>
+			<div class="formRow">
+				<label for="name">Name</label>
+				<input name="custName" id="name" type="text" placeholder="First and Last Name" required />
+			</div>
+			<div class="formRow">
+				<label for="street">Street Address1</label>
+				<input name="custStreet" id="street" type="text" required/>
+			</div>
+			<div class="formRow">
+				<label for="street2">Street Address1</label>
+				<input name="custStreet2" id="street2" type="text" />
+			</div>
+			<div class="formRow">
+				<label for="city">City</label>
+				<input name="custCity" id="city" type="text" value="Richmond" required/>
+			</div>
+			<div class="formRow">
+				<label for="state">State</label>
+				<input name="custState" id="state" type="text" value="VA" required/>
+			</div>
+			<div class="formRow">
+				<label for="zip">Postal Code</label>
+				<input name="custZip" id="zip" type="text" placeholder="nnnnn (-nnnn)"
+				pattern="^\d{5}(-\d{4})?$" required/>
+				
+			</div>
+			<div class="formRow">
+				<label for="phone">Phone Number</label>
+				<input name="custPhone" id="phone" type="tel" placeholder="(nnn) nnn-nnnn"
+				pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" required/>
+			</div>
+			<div class="formRow">
+				<label for="email">Email Address</label>
+				<input name="custEmail" id="email" type="email" required />
+			</div>
+                        <div class="formRow">
+                            <label for="note">What services are you looking for?</label><br>
+                            <textarea rows="4" cols="50" name="note" id="note" form="inquiry" placeholder="Enter text here..."></textarea>
+			</div>
+                        <div class="formRow">
+                            <?php echo $message; ?>
+                        </div>
+                </fieldset>
+		<div id="buttons">
+		  <input type="submit" value='Submit My Inquiry' />
+		  <input type="reset"  value='Cancel' />
+		</div>
+	 </form>
+
+   </section>
+<footer>
+      <address>
+      McClenny Insurance Agency <br />
+      1145 Gaskins Rd Ste 114 <br/>
+      Henrico, VA 23238 <br />
+      (804) 754-1112<br />
+    </address>
+   </footer>
+</body>
+
+</html>
